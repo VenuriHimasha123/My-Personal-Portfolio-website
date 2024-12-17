@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="title" content="Venuri Himasha- undergraduate of KDU">
+    <meta name="description"
+        content="Discover venuri's professional portfolio showcasing expertise in full-stack development, web applications, and innovative solutions. Explore projects, skills, and achievements.">
+    <meta name="keywords"
+        content="venuri, Portfolio, Web Development, Professional Portfolio, Innovative Solutions,  portfolio website">
+    <meta name="author" content="Venuri Himasha">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Venuri Himasha | KDU </title>
+    <style>
+/* Volunteering Grid */
+.volunteering-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+/* Volunteering Card */
+.volunteering-card {
+    background-color: black;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: white;
+}
+
+.volunteering-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Volunteering Image */
+.volunteering-img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+/* Title and Subtitle */
+.volunteering-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.volunteering-subtitle {
+    font-size: 16px;
+    color: rgb(216, 178, 178);
+    margin-bottom: 16px;
+}
+
+/* Description */
+.volunteering-card p {
+    color: #26d8df;
+    font-size: 14px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .volunteering-title {
+        font-size: 18px;
+    }
+
+    .volunteering-subtitle {
+        font-size: 14px;
+    }
+
+    .volunteering-card p {
+        font-size: 12px;
+    }
+
+    .volunteering-card {
+        padding: 16px;
+    }
+}
+
+
+
+
+/* General responsive container settings */
+.container {
+    max-width: 100%;
+    padding: 0 15px;
+}
+
+/* Grid adjustments for mobile devices */
+@media screen and (max-width: 768px) {
+    .qualification__wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .qualification__content {
+        grid-template-columns: 1fr; /* Single column for smaller screens */
+        gap: 20px;
+    }
+
+    .qualification__item {
+        text-align: center; /* Center-align content for better appearance */
+    }
+
+    .qualification__title, 
+    .qualification__description, 
+    .qualification__date {
+        font-size: 1rem; /* Adjust font size for readability */
+    }
+
+    .qualification__image {
+        width: 100%; /* Make images responsive */
+        height: auto;
+        margin: 10px 0; /* Add spacing around images */
+    }
+
+    .section__title {
+        font-size: 1.8rem;
+    }
+
+    .section__subtitle {
+        font-size: 1rem;
+    }
+
+    /* Adjust icon sizes */
+    .qualification__name i {
+        font-size: 1.5rem;
+    }
+}
+
+/* Ultra-small devices */
+@media screen and (max-width: 480px) {
+    .qualification__content {
+        gap: 10px;
+    }
+
+    .qualification__title, 
+    .qualification__description, 
+    .qualification__date {
+        font-size: 0.9rem; /* Further reduce font size for very small screens */
+    }
+
+    .section__title {
+        font-size: 1.5rem;
+    }
+
+    .section__subtitle {
+        font-size: 0.9rem;
+    }
+}
+
+        /* Base styles */
+.section {
+    padding: 2rem 1rem;
+}
+
+.about__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.about__content, .skills {
+    padding: 1rem;
+}
+
+.skills__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.skills__content {
+    flex: 1 1 calc(50% - 1rem);
+    min-width: 200px;
+}
+
+.skills__list {
+    list-style: none;
+    padding: 0;
+}
+
+.skills__item {
+    margin: 0.5rem 0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .about__wrapper {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .skills__wrapper {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .skills__content {
+        min-width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 1rem;
+    }
+
+    .about__content p {
+        font-size: 0.9rem;
+    }
+
+    .btn--primary {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+        @keyframes bounce-up {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-5px);
+            }
+            60% {
+                transform: translateY(-3px);
+            }
+        }
+
+        .animate-bounce-smooth {
+            animation: bounce-up 2s infinite;
+        }
+
+        .masonry-grid {
+            column-count: 3; /* Number of columns */
+            column-gap: 20px; /* Space between columns */
+            padding: 10px;
+        }
+
+        .masonry-item {
+            display: inline-block;
+            margin-bottom: 20px;
+            break-inside: avoid; /* Prevents content break */
+        }
+
+        .masonry-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .masonry-item img:hover {
+            transform: scale(1.05); /* Subtle zoom on hover */
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .masonry-grid {
+                column-count: 1;
+            }
+        }
+    </style>
+    <!--=================== Main CSS ====================-->
+    <link rel="stylesheet" href="main.css">
+    <!--=================== Google Fonts ====================-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <!--=================== Remixicons ====================-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!--=================== SwiperJS CSS ====================-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <!--=================== Header ====================-->
+    <header id="header" class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="/" class="nav__brand">
+                    <i class="ri-award-line" style="color: #be0d0d;"></i>Venuri<Span>Hendavitharana</Span>
+                </a>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#hero" class="nav__link">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#about" class="nav__link">About</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#qualification" class="nav__link">Qualification</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#volunteering" class="nav__link">Volunteering</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#project" class="nav__link">Projects</a>
+                        </li>
+                      
+                        <li class="nav__item">
+                            <a href="#contact" class="nav__link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav__toggle">
+                    <i id="nav-toggle" class="ri-menu-3-line"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!--=================== main ====================-->
+    <main class="main">
+        <!--=================== Hero ====================-->
+        <section id="hero" class="hero">
+            <div class="container">
+                <div class="d-grid hero__wrapper">
+                    <div class="hero__content">
+                        <h1 class="hero__title">Hi , <br>  I am VENURI HENDAVITHARANA</h1>
+                       
+                        <h2 id="typewriter"
+                            style="font-size: 25px; font-weight: bold; color: #1e90ff; border-right: 2px solid #1e90ff; white-space: nowrap; overflow: hidden; display: inline-block;">
+                        </h2>
+                        <p style="margin-top:15px;" class="hero__description">
+                            
+                            
+                            🌟 Passionate Computer Science Undergraduate at KDU 🎓, eager to learn and grow in the field of technology 💻. Currently honing skills in programming languages and web development frameworks 👨‍💻, with a focus on creating responsive and user-friendly websites 🌐. A quick learner and problem-solving enthusiast 🤔, excited to collaborate on dynamic projects and expand my knowledge 🤝. Always ready to take on new challenges and contribute to innovative ideas 💡.
+                        </p>
+                        <a href="mailto:syedhamzajaffarzaidi@gmail.com" class="btn--primary"
+                            style="padding:1.5rem 4rem;margin-bottom:10px;display:inline-block;">Hire Me!</a>
+                        <div class="hero__info">
+                            <div class="hero__info-wrapper">
+                               
+                                <h2 class="hero__info-title">3 more <br>Projects<br>Completed</h2>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <img src="assets/img/photo1.jpeg" alt="venuri" class="hero__img">
+                </div>
+            </div>
+        </section>
+        <!--=================== About ====================-->
+        <section id="about" class="section about">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">About Me</h2>
+                    <span class="section__subtitle">Who am I</span>
+                </div>
+                <div class="about__wrapper">
+                    <div class="about__content">
+                        <h3 class="about__title">I'm a 1st-year undergraduate of General Sir John Kotelawala Defence University</h3>
+                        <h3>BSc (Hons) in Computer Science</h3>
+                        <p class="about__description">
+                            Hi, I’m Venuri Himasha Hendavitharana, a passionate and dedicated software developer with a strong foundation in Computer Science. As a current undergraduate pursuing my BSc (Hons) in Computer Science at General Sir John Kotelawala Defence University, I am driven by the goal of creating impactful and innovative solutions in the tech world.
+                            <br><br>
+                            My technical expertise includes Java programming, DBMS, and modern frameworks like React and Angular. <br><br> Additionally, I hold certifications in Python, Cisco's Introduction to Networks, and have been recognized in mathematics and debate competitions.
+                            <br><br>
+                            Beyond academics, I actively engage in leadership and volunteering roles to grow my skills and contribute to the community. I’ve had the privilege of working with:
+                            <br><br>
+                            IEEE WIE KDU as part of the Secretary Team <br>
+                            British Computer Society of KDU as a Public Relations Team member <br>
+                            IEEE Computer Society as a dedicated contributor <br><br>
+                            These roles have strengthened my ability to collaborate effectively, lead with purpose, and adapt to diverse challenges.
+                            <br><br>
+                            In my free time, I enjoy traveling, drawing, and exploring creative projects. I’m committed to pursuing a rewarding career in the IT field, continuously learning, and making meaningful contributions through technology.
+                            <br><br>
+                            Let’s connect and collaborate!
+                        </p>
+                        <a href="#project" class="btn btn--primary">Know More</a>
+                    </div>
+                    <div class="skills">
+                        <h3 class="skills__title">Technologies I've been working with:</h3>
+                        <div class="skills__wrapper">
+                            <div class="skills__content">
+                                <h4 class="skills__subtitle">Backend</h4>
+                                <ul class="skills__list">
+                                    <li class="skills__item"><i class="ri-arrow-right-s-fill"></i> PHP</li>
+                                    <li class="skills__item"><i class="ri-arrow-right-s-fill"></i> Node.js</li>
+                                    <li class="skills__item"><i class="ri-arrow-right-s-fill"></i> MySQL</li>
+                                </ul>
+                            </div>
+                            <div class="skills__content">
+                                <h4 class="skills__subtitle">Frontend</h4>
+                                <ul class="skills__list">
+                                    <li class="skills__item"><i class="ri-arrow-right-s-fill"></i> HTML</li>
+                                    <li class="skills__item"><i class="ri-arrow-right-s-fill"></i> CSS</li>
+                                    <li class="skills__item"><i class="ri-arrow-right-s-fill"></i> JavaScript</li>
+                                    <li class="skills__item"><i class="ri-arrow-right-s-fill"></i> Bootstrap</li>
+                                    <li class="skills__item"><i class="ri-arrow-right-s-fill"></i> React</li>
+                                    <li class="skills__item"><i class="ri-arrow-right-s-fill"></i> Tailwind CSS</li>
+                                </ul>
+                            </div>
+                            <div class="skills__content">
+                                <h4 class="skills__subtitle">Programming Languages</h4>
+                                <ul class="skills__list">
+                                    <li class="skills__item"><i class="ri-arrow-right-s-fill"></i> Java</li>
+                                    <li class="skills__item"><i class="ri-arrow-right-s-fill"></i> Python</li>
+                                    <li class="skills__item"><i class="ri-arrow-right-s-fill"></i> C++</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="image-container">
+            <img src="assets/img/photo4.jpeg" alt="Venuri's Image" class="profile-image">
+          </div>
+
+        <!--=================== Qualification ====================-->
+        <section id="qualification" class="section qualification">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Qualification</h2>
+                    <span class="section__subtitle">Experience & Education</span>
+                </div>
+                <!--============== Professional Experience ============-->
+                <div class="qualification__wrapper">
+                    <h3 class="qualification__name">
+                        <i class="ri-briefcase-fill"></i>
+                        Professional Experience
+                    </h3>
+                    <div class="d-grid qualification__content">
+                        <!-- Experience 1-->
+                        <div class="qualification__item">
+                            <h3 class="qualification__title">Content Creator - Secretary Team at IEEE WIE KDU</h3>
+                            <p class="qualification__description"> 
+                                As a Content Creator in the Secretary Team of IEEE Women in Engineering (WIE) at KDU, I am responsible for crafting engaging content that represents our initiatives and events. From writing impactful articles to designing creative visuals, my role involves contributing to the growth and visibility of our community. This includes:
+                                
+                                Creating and sharing content for events, projects, and collaborations.
+                                Enhancing our team’s social media presence with regular posts and creative graphics.
+                                Collaborating with various teams to ensure our message is aligned and impactful.
+                            </p>
+                            <span class="qualification__date"> July 2024 - Present</span>
+                             <!-- Place for the image -->
+    <img src="assets/img/3.jpeg" alt="Social Media Coordinator" class="qualification__image">
+    
+                        </div>
+                         <!-- Experience 2-->
+                         <div class="qualification__item">
+                            <h3 class="qualification__title"> Student Instructor - Maxim Institute</h3>
+                            <p class="qualification__description"> 
+                               
+                                At Maxim Institute, I teach Mathematics for GCE O/L students in Sri Lanka, providing guidance to students as they prepare for their exams. This role allows me to apply my academic knowledge while helping students excel in their studies. My responsibilities include:
+                                
+                                Leading lessons and providing individual support to students.
+                                Developing and delivering instructional materials tailored to the GCE O/L syllabus.
+                                Offering guidance during practical sessions and fostering a motivating, supportive learning environment.
+                            </p>
+                            <span class="qualification__date"> sep 2023 -  DEC 2023</span>
+                              <!-- Place for the image -->
+    <img src="assets/img/1.jpeg" alt="Social Media Coordinator" class="qualification__image">
+    
+                        </div>
+                        <!-- Experience 3-->
+                        <div class="qualification__item">
+                            <h3 class="qualification__title">Social Media Coordinator-  Public Relations Team - British Computer Society KDU</h3>
+                            <p class="qualification__description"> 
+                               
+                               
+                                As part of the Public Relations Team in the British Computer Society at KDU, I manage and promote our initiatives through social media platforms such as Facebook and Instagram. This role gives me the opportunity to work with a dynamic team and create content that resonates with our audience. My key responsibilities include:
+                                
+                                Managing social media accounts, curating engaging posts, and promoting events.
+                                Designing promotional content and updates to keep our followers informed.
+                                Collaborating with the public relations team to strategize and implement effective outreach campaigns.
+                            </p>
+                            <span class="qualification__date"> July 2024 -  present</span>
+                              <!-- Place for the image -->
+    <img src="assets/img/2.jpeg" alt="Social Media Coordinator" class="qualification__image">
+    
+                        </div>
+                    </div>
+                </div>
+                <!--============== Education ============-->
+                <div class="qualification__wrapper">
+                    <h3 class="qualification__name">
+                        <i class="ri-booklet-fill"></i>
+                        Education
+                    </h3>
+                    <div class="d-grid qualification__content">
+                        <!-- Education 1-->
+                        <div class="qualification__item">
+                            <h3 class="qualification__title">Bachelor of Science (Honors) in Computer Science</h3>
+                            <h4 class="qualification__title">General Sir John Kotelawala Defence University (KDU)</h4>
+                            <p class="qualification__description">
+                                Key Skills and Knowledge Areas:
+                                Programming Languages: C++, Java <br>
+                                Networking: Computer Networks <br>
+                                System Knowledge: Computer System Architecture, DBMS <br>
+                                Development Expertise: Frontend Development, Backend Development, Software Development
+                                Analysis and Modeling: Software Analysis and Modeling <br><br>
+                                Volunteer Work and Activities: <br>
+                                Secretary Team Member, IEEE Women in Engineering (WIE) KDU <br>
+                                Public Relations Team Member, British Computer Society (BCS) KDU <br>
+                                Member, IEEE Computer Society KDU <br>
+                                Drama Club Member
+                            </p>
+                            <span class="qualification__date">2024 -2028</span>
+                        </div>
+                        <!-- Education 2-->
+                        <div class="qualification__item">
+                            <h3 class="qualification__title"> GCE Advanced Level Stream: Physical Sciences</h3>
+                            <h4 class="qualification__title">Royal College, Horana</h4>
+                            <p class="qualification__description">
+                                Subjects: Pure Mathematics, Applied Mathematics, Chemistry, Physics <br><br>
+                          Extracurricular Activities: <br>
+                          Athletics Participant <br>
+                         Member, Science Society  <br>
+
+                         Member, Buddhist Society
+                            </p>
+                            <span class="qualification__date">2022</span>
+                        </div>
+                        <!-- Education 3-->
+                        <div class="qualification__item">
+                            <h3 class="qualification__title">Diploma in English Language and Literature</h3>
+                            <h4 class="qualification__title">Aquinas College of Higher Studies</h4>
+                            <p class="qualification__description">
+                                Activities and Achievements: <br><br>
+                                Achieved Second Runner-Up position in the Inter-Class Debate Competition <br>
+                                Developed strong presentation skills through class activities <br>
+                                Participated in news reading events, showcasing public speaking abilities <br>
+                                Engaged in drama competitions, highlighting creativity and teamwork skills
+
+                            </p>
+                            <span class="qualification__date">2023 - 2024</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <!--=================== volunteering ====================-->
+        <section id="volunteering" class="section services" style="padding: 80px 0; background-color: inherit;">
+            <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
+                <h2 style="font-size: 32px; font-weight: bold; text-align: center; color: white; margin-bottom: 32px;">
+                    Volunteering
+                </h2>
+                <div class="volunteering-grid">
+                    <!-- BCS Card -->
+                    <div class="volunteering-card">
+                        <div class="volunteering-img">
+                            <img src="assets/img/bcs.jpeg" alt="BCS logo">
+                        </div>
+                        <h3 class="volunteering-title">Member of Team Public Relations (PR)</h3>
+                        <h4 class="volunteering-subtitle">BCS Student Chapter - Kotelawala Defence University</h4>
+                        <p>I work with the BCS Public Relations team at KDU, helping to communicate with others and promote events to increase the society's visibility and involvement in the tech community.</p>
+                    </div>
+        
+                    <!-- WIE Card -->
+                    <div class="volunteering-card">
+                        <div class="volunteering-img">
+                            <img src="assets/img/wie.jpeg" alt="WIE logo">
+                        </div>
+                        <h3 class="volunteering-title">Member of Team Secretary</h3>
+                        <h4 class="volunteering-subtitle">IEEE WIE Student Branch Affinity Group - KDU</h4>
+                        <p>As a member of the IEEE KDU WIE Secretary team, I help organize events and manage communications, focusing on promoting diversity and empowering women in engineering.</p>
+                    </div>
+        
+                    <!-- IEEE Day Card -->
+                    <div class="volunteering-card">
+                        <div class="volunteering-img">
+                            <img src="assets/img/ieee.jpeg" alt="IEEE logo">
+                        </div>
+                        <h3 class="volunteering-title">IEEE Day 2024 Volunteering</h3>
+                        <h4 class="volunteering-subtitle">IEEE WIE Student Branch Affinity Group - KDU</h4>
+                        <p>IEEE Day 2024 was a vibrant celebration that brought together tech enthusiasts, innovators, and students to highlight the transformative power of technology in shaping a brighter future. This year, we collaborated with passionate members from our university and partnered with renowned institutions such as NIBM and NSBM, fostering a spirit of unity and shared purpose.
+
+                            The event was packed with engaging activities, including tech talks, workshops, and interactive sessions designed to ignite creativity and inspire innovation. Participants immersed themselves in thought-provoking discussions led by industry leaders, exchanged ideas through networking sessions, and showcased their talents in competitions aimed at solving real-world challenges using cutting-edge technology.
+                            
+                            IEEE Day 2024 was not just an event but a platform that encouraged knowledge-sharing, collaboration, and technological advancement, uniting universities and individuals under the shared goal of driving progress and creating meaningful impact in society.</p>
+                    </div>
+        
+                    <!-- Envision 2.0 Card -->
+                    <div class="volunteering-card">
+                        <div class="volunteering-img">
+                            <img src="assets/img/env.jpeg" alt="Envision 2.0 logo">
+                        </div>
+                        <h3 class="volunteering-title">Envision 2.0 - Student Volunteer</h3>
+                        <h4 class="volunteering-subtitle">IEEE Computer Society of KDU</h4>
+                        <p>successfully organized Envision 2.0, featuring guest speakers Mr. Peter D'Almeida, Mr. Nisal Sudila from IFS, and Mrs. Sajani Lokuge from IFS. This event strengthened my leadership and event management skills while contributing to the tech community at KDU.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+
+        <!--=================== Projects ====================-->
+        <section id="project" class="section project" style="background-color: #460a3e;">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Projects</h2>
+                    <span class="section__subtitle">My recent work</span>
+                </div>
+                <div class="d-grid project__wrapper">
+                    <!--============== project 1 =============-->
+                    <div class="project__content">
+                        <img src="assets/img/t1.PNG" alt="Agency Website" class="project__img">
+                        <img src="assets/img/t2.jpeg" alt="Agency Website" class="project__img">
+                        <img src="assets/img/t3.jpeg" alt="Agency Website" class="project__img">
+                        <a href="https://cryptoverse2x.netlify.app/" class="project__link">
+                            <h3 class="project__title">TravelEase-online Travel Booking System</h3>
+                        </a>
+                        <p class="project__description">Travel Booking System is a web-based application designed to simplify the process of searching, booking, and managing travel arrangements. Users can register, log in, and explore various travel destinations with ease. The platform offers essential functionalities such as user authentication, a search system for destinations, and booking management.
+
+                            Built using HTML, CSS, JavaScript, PHP, and MySQL, this project provides a responsive design for a seamless user experience on both desktop and mobile devices. It also ensures secure session management for user privacy and future scalability for advanced features like payment integration and reviews.
+                            
+                            🌍✈️</p>
+                        <a href="https://github.com/VenuriHimasha123/Travelease-online-travel-booking-system.git" class="project__link">View Project
+                            <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                    <!--============== project 2 =============-->
+                    <div class="project__content">
+                        <img src="assets/img/p1.jpeg" alt="Cryptoverse " class="project__img">
+                        <img src="assets/img/p2.jpeg" alt="Cryptoverse " class="project__img">
+                        <img src="assets/img/p3.jpeg" alt="Cryptoverse " class="project__img">
+                        <a href="https://play-hangman-shjz.netlify.app/" class="project__link">
+                            <h3 class="project__title">PlantGuard-intelligent plant watering:a sensor driven system for sri lanka s green thumbs</h3>
+                        </a>
+                        <p class="project__description">Intelligent Plant Watering: A Sensor-Driven System for Sri Lanka’s Green Thumbs is an innovative project designed to automate plant irrigation using sensors for real-time soil moisture, temperature, and humidity monitoring. The system provides precise water control, ensuring sustainable farming practices while conserving resources. A web-based dashboard, developed by Venuri Himasha Hendavitharana and Behan Ravishka, allows users to monitor environmental conditions and control irrigation seamlessly. Built with a combination of HTML, CSS, JavaScript, and PHP, the frontend ensures a user-friendly experience with detailed graphical data insights. This project reflects teamwork, dedication, and a commitment to advancing agricultural technology</p>
+                        <a href="https://github.com/VenuriHimasha123/PlantGuardian-Frontend-for-Intelligent-Plant-Watering-System.git" class="project__link">View Project
+                            <i class="ri-arrow-right-line"></i></a>
+                            <a href="https://drive.google.com/file/d/1bDA7V3xPj7LY_5xtA2nG3pBmiAKj06PC/view?usp=drivesdk" class="project__link">View Project proposal
+                            <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                    <!--============== project 3 =============-->
+                    <div class="project__content">
+                        <img src="assets/img/m1.PNG" alt="Nike Landing Page" class="project__img">
+                        <a href="https://nike-shjz.netlify.app/" class="project__link">
+                            <h3 class="project__title">my potofolio website</h3>
+                        </a>
+                        <p class="project__description">This website is a reflection of my journey as a passionate Computer Science student and an aspiring web developer. Designed with modern aesthetics and user-friendliness in mind, it serves as a showcase of my skills, projects, and creativity.
+
+                            💡 What’s Inside?
+                            
+                            Projects: Explore my web development work, featuring responsive designs, interactive elements, and innovative solutions.
+                            Skills: A peek into the tools, technologies, and programming languages I specialize in.
+                            About Me: Learn about my passion for technology, my journey so far, and my aspirations for the future.
+                            Get in Touch: A space where you can reach out, whether for collaborations, feedback, or just a friendly hello.
+                            This site isn’t just about displaying my work—it’s a step towards connecting with like-minded individuals and creating something amazing together.</p>
+                        <a href="" class="project__link">View Project
+                            <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                    <!-- ============== project 4 ============= -->
+                    <div class="project__content">
+                        <img src="assets/img/c2.jpeg" alt="linktree clone" class="project__img">
+                        <img src="assets/img/c3.jpeg" alt="linktree clone" class="project__img">
+                        <img src="assets/img/c1.jpeg" alt="linktree clone" class="project__img">
+                       
+                            <h3 class="project__title">A CSR project Initiative to Prevent Dengue</h3>
+                        </a>
+                        <p class="project__description">The CSR project to clean the Rathmalana bus station aims to reduce the risk of dengue fever by eliminating potential breeding grounds for mosquitoes. The initiative involves cleaning the station premises, removing stagnant water, and ensuring proper waste disposal. Additionally, efforts will focus on educating the public about the importance of keeping the area clean to prevent the spread of dengue. Volunteers will work together to clear any debris, fix any water drainage issues, and promote health and safety practices to benefit the local community.</p>
+                        
+                    </div>
+                    
+                <div style="align-items: center;justify-content: center;display: flex; margin-top:10px;"><a
+                        href="https://github.com/VenuriHimasha123" class="btn--primary"
+                        style="padding:1.5rem 4rem;margin-top:10px;display: inline-block;align-items:center;text-align:center;justify-content:center;">View
+                        More Projects
+                        <i style="text-align:center;" class="fa-solid fa-angle-down fa-bounce"></i></a></div>
+            </div>
+
+        </section>
+
+        </div>
+        <div class="swiper-pagination"></div>
+        </div>
+        </div>
+        </section>
+
+        <!--=================== Contact ====================-->
+        <section id="contact" class="section contact">
+            <div class="container">
+                <div class="d-grid contact__wrapper">
+                    <div class="contact__content">
+                        <img style="animation: move 20s linear infinite;z-index: -1;border-radius: 15px;" src="assets/img/me.jpeg" alt="blur me">
+                        <h2 class="contact__title">Interested in working together? Let's talk</h2>
+                        <p class="contact__description">
+                            Ready to work together on your next software project? I'd love to hear from you!
+                            Feel free to get in touch using the contact information below.
+                            Whether uou have a specific project in mind or just want to chat about your software
+                            development needs , I am here to help.
+                            I will respond to your message as quickly as possible and look forward to connecting with
+                            you soon.
+                        </p>
+                    </div>
+                    <div class="contact__btn">
+                        <a style="align-items:center; gap:10px; text-align:center;"
+                            href="https://www.linkedin.com/in/venuri-hendavitharana-746553322?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="btn btn--secondary">Get in touch
+                            <i class="fa-solid fa-handshake"></i></a>
+                    </div>
+                </div>
+                <!-- Contact Form -->
+                <div
+                    style="display: flex; min-height: 100vh; font-family: 'Montserrat', sans-serif; font-weight: 700; letter-spacing: 1.4px; margin-top: 10px;">
+                    <div style="flex: 0 1 700px; margin: auto; padding: 10px; width: 100%;">
+                        <div
+                            style="position: relative; background: #3e3e3e; border-radius: 15px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); width: 100%;">
+                            <div
+                                style="display: flex; align-items: center; padding: 10px 20px; background: #4d4d4f; border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                                <div style="margin-right: auto;">
+                                    <div
+                                        style="display: inline-block; width: 8px; height: 8px; margin-right: 3px; border-radius: 8px; background: #ed1c6f;">
+                                    </div>
+                                    <div
+                                        style="display: inline-block; width: 8px; height: 8px; margin-right: 3px; border-radius: 8px; background: #e8e925;">
+                                    </div>
+                                    <div
+                                        style="display: inline-block; width: 8px; height: 8px; border-radius: 8px; background: #74c54f;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display: flex; flex-wrap: wrap; flex-direction: column; padding: 20px;">
+                                <div style="flex: 1; padding: 20px; color: #32a852;">
+                                    <div style="font-size: 26px; margin-bottom: 10px;">
+                                        <span>CONTACT ME</span>
+                                    </div>
+                                </div>
+                                <div style="">
+                                    <!-- Embed Google Form -->
+                                    <div class="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-100 to-blue-300 px-4">
+                                        <form action="save_message.php" method="POST"
+                                              class="bg-white p-6 md:p-10 rounded-2xl shadow-2xl w-full max-w-lg transform transition duration-300 hover:scale-105">
+                                            <!-- Title -->
+                                            <h2 class="text-2xl md:text-3xl font-extrabold text-center text-gray-800 mb-8">
+                                                Get In Touch
+                                            </h2>
+                                            
+                                            <!-- Name Input -->
+                                            <label for="name" class="block text-base md:text-lg font-medium text-gray-600 mb-2">
+                                                Your Name
+                                            </label>
+                                            <input type="text" id="name" name="name" required
+                                              class="w-full p-3 md:p-4 text-gray-800 bg-gray-50 border border-gray-300 rounded-lg shadow-sm mb-4 
+                                                     focus:ring-2 focus:ring-blue-400 focus:outline-none">
+                                            <br><br>
+                                            <!-- Email Input -->
+                                            <label for="email" class="block text-base md:text-lg font-medium text-gray-600 mb-2">
+                                                Your Email
+                                            </label>
+                                            <input type="email" id="email" name="email" required
+                                              class="w-full p-3 md:p-4 text-gray-800 bg-gray-50 border border-gray-300 rounded-lg shadow-sm mb-4 
+                                                     focus:ring-2 focus:ring-blue-400 focus:outline-none">
+                                            <br><br>
+
+                                            <!-- Message Input -->
+                                            <label for="message" class="block text-base md:text-lg font-medium text-gray-600 mb-2">
+                                                Your Message
+                                            </label>
+                                            <textarea id="message" name="message" rows="4" required
+                                              class="w-full p-3 md:p-4 text-gray-800 bg-gray-50 border border-gray-300 rounded-lg shadow-sm mb-6 
+                                                     focus:ring-2 focus:ring-blue-400 focus:outline-none resize-none"></textarea>
+                                            
+                                            <!-- Submit Button -->
+                                            <button type="submit" style="background-color: #68b4e0;"
+                                              class="w-full py-3 md:py-4 text-white font-bold rounded-lg shadow-md hover:bg-green-700 transition duration-300">
+                                              Send Message
+                                            </button>
+                                        </form>
+                                    </div>
+                                    
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </section>
+        <!-- Photo Collage Section -->
+        <div >
+            <h2 class="text-4xl font-bold text-center text-pink-800 mb-8">Lens Focus Gallery</h2>
+    
+            <!-- Masonry Grid Container -->
+            <div class="masonry-grid max-w-6xl mx-auto">
+                <!-- Individual Image Blocks -->
+                <div class="masonry-item">
+                    <img src="assets/img/m5.jpeg" alt="Beautiful Scene 1">
+                </div>
+                <div class="masonry-item">
+                    <img src="assets/img/m4.jpeg" alt="Beautiful Scene 2">
+                </div>
+                <div class="masonry-item">
+                    <img src="assets/img/m1.jpeg" alt="Beautiful Scene 3">
+                </div>
+                <div class="masonry-item">
+                    <img src="assets/img/m2.jpeg" alt="Beautiful Scene 4">
+                </div>
+                <div class="masonry-item">
+                    <img src="assets/img/m6.jpeg" alt="Beautiful Scene 5">
+                </div>
+                <div class="masonry-item">
+                    <img src="assets/img/m3.jpeg" alt="Beautiful Scene 5">
+                </div>
+               
+            </div>
+        </div>
+       
+    </main>
+    <!--=================== footer ====================-->
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="d-grid footer__wrapper"
+                style="display:flex;justify-content:center; align-items:center; text-align:center;">
+                <div class="footer__content">
+                    <h4 class="footer__title">Follow Me</h4>
+                    <ul class="footer__social-list">
+                        <li class="footer__social-item">
+                            <a href="venurihimasha123@gmail.com" target="_blank" class="footer__social-link">
+                                <i class="fa-regular fa-envelope fa-beat-fade"></i>
+                            </a>
+                        </li>
+
+                        <li class="footer__social-item">
+                            <a href="https://api.whatsapp.com/send?phone=0742365865&app=facebook&entry_point=page_cta&fbclid=IwY2xjawGy26kBHUhVHIUy2pIkHelXuOqxRbDCgRi-MgHY7s7Ca9QM4aTeZvJRiN2J9FbU5Q"
+                                target="_blank" class="footer__social-link">
+                                <i class="fa-brands fa-whatsapp fa-beat-fade"></i>
+                            </a>
+                        </li>
+                       
+                        <li class="footer__social-item">
+                            <a href="https://www.linkedin.com/in/venuri-hendavitharana-746553322?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="footer__social-link">
+                                <i class="fa-brands fa-linkedin-in fa-beat-fade"></i>
+                            </a>
+                        </li>
+                        <li class="footer__social-item">
+                            <a href="https://github.com/VenuriHimasha123" target="_blank" class="footer__social-link">
+                                <i class="fa-brands fa-github fa-fade"></i>
+                            </a>
+                        </li>
+                       
+                    </ul>
+                </div>
+
+            </div>
+            <p class="footer__copyright">&copy; 2024 Venuri Himasha. All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!--=================== SwiperJS  ====================-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <!--=================== ScrollReveal ==================-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--=================== Main JS ====================-->
+    <script src="assets/js/main.js"></script>
+    <!-- Back to Top Button -->
+    <button id="backToTop"  style="margin-right: 0px;"
+    class="fixed bottom-8 right-6 bg-gradient-to-br from-purple-500 to-indigo-600 text-white p-4 rounded-full shadow-lg 
+           hover:bg-gradient-to-br hover:from-indigo-600 hover:to-purple-700 
+           transform transition-all duration-300 hover:scale-110 focus:outline-none hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+    </svg>
+    </button>
+</body>
+
+</html>
+
+<script>
+     const backToTopButton = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTopButton.classList.remove('hidden');
+        backToTopButton.classList.add('animate-bounce-smooth');
+    } else {
+        backToTopButton.classList.add('hidden');
+        backToTopButton.classList.remove('animate-bounce-smooth');
+    }
+});
+
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+    });
+});
+    const typewriterTexts = [
+      "Frontend Web Developer",
+     "Undergraduate",
+      "Content Creator",
+      "Computer Science",
+    ];
+
+    let currentTextIndex = 0;
+    let charIndex = 0;
+
+    const typewriterElement = document.getElementById("typewriter");
+
+    function typeEffect() {
+      // Get the current text
+      const currentText = typewriterTexts[currentTextIndex];
+
+      // Update the text content with the next character
+      typewriterElement.textContent = currentText.slice(0, charIndex);
+
+      // Increment the character index
+      charIndex++;
+
+      // If the full text has been typed, pause and then switch to the next text
+      if (charIndex > currentText.length) {
+        setTimeout(() => {
+          charIndex = 0; // Reset character index
+          currentTextIndex = (currentTextIndex + 1) % typewriterTexts.length; // Move to next text
+        }, 2000); // Pause before switching
+      }
+
+      // Continue typing every 100ms
+      setTimeout(typeEffect, 100);
+    }
+
+    // Start the typewriter effect
+    typeEffect();
+
+   
+</script>
